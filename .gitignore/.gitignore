@@ -1,0 +1,114 @@
+package com.company;
+
+import javax.swing.plaf.BorderUIResource;
+import java.time.LocalDate;
+
+class Main {
+
+    private String jmeno;
+    private String prijmeni;
+    private String datumNarozeni;
+    private String trida;
+    private String predmet1;
+    private int znamkaZPredmetu1;
+    private String predmet2;
+    private int znamkaZPredmetu2;
+    private String predmet3;
+    private int znamkaZPredmetu3;
+    private String predmet4;
+    private int znamkaZPredmetu4;
+
+
+//1.Konstruktor pro zapsani studenta, informaci o nem a predmetu, ze kterych maturuje.
+
+    public Main(String jmeno, String prijmeni, String datumNarozeni, String trida,
+                String predmet1, String predmet2, String predmet3, String predmet4) {
+
+        this.jmeno = jmeno;
+        this.prijmeni = prijmeni;
+        this.datumNarozeni = datumNarozeni;
+        this.trida = trida;
+        this.predmet1 = predmet1;
+        this.predmet2 = predmet2;
+        this.predmet3 = predmet3;
+        this.predmet4 = predmet4;
+    }
+
+
+//2.Konstruktor pro celkove zapsani.
+
+    public Main(String jmeno, String prijmeni, String datumNarozeni, String trida,
+                String predmet1, int znamkaZPredmetu1, String predmet2, int znamkaZPredmetu2,
+                String predmet3, int znamkaZPredmetu3, String predmet4, int znamkaZPredmetu4) {
+        this.jmeno = jmeno;
+        this.prijmeni = prijmeni;
+        this.datumNarozeni = datumNarozeni;
+        this.trida = trida;
+        this.predmet1 = predmet1;
+        this.znamkaZPredmetu1 = znamkaZPredmetu1;
+        this.predmet2 = predmet2;
+        this.znamkaZPredmetu2 = znamkaZPredmetu2;
+        this.predmet3 = predmet3;
+        this.znamkaZPredmetu3 = znamkaZPredmetu3;
+        this.predmet4 = predmet4;
+        this.znamkaZPredmetu4 = znamkaZPredmetu4;
+    }
+
+
+//Metoda pro ziskani informaci o zakovi:
+
+    public String info() {
+        return "Jmeno: " + jmeno + ", " + "Prijmeni: " + prijmeni + ", " + "Datum narozeni: "
+                + datumNarozeni + ", " + "Trida: " + trida + ", " + "Zapsane predmety: "
+                + predmet1 + ", " + predmet2 + ", " + predmet3 + ", " + predmet4;
+    }
+
+    public String znamky() {
+        return "Jmeno a prijmeni: " + jmeno + " " + prijmeni + ": " + predmet1 + ": " + znamkaZPredmetu1 + ", "
+                + predmet2 + ": " + znamkaZPredmetu2 + ", " + predmet3 + ": " + znamkaZPredmetu3 + ", " + predmet4 + ": " + znamkaZPredmetu4
+                + ", " + "Vysledek: ";
+    }
+
+
+    //Zapis zaku:
+    public static void main(String[] args) {
+
+        Main Student1 = new Main("Jakub", "Novak", "7.12.2000",
+                "4.A", "Cesky jazyk", "Anglicky jazyk", "Matematika", "Chemie");
+
+        Main Student2 = new Main("Karel", "Prochazka", "12.6.2000",
+                "4.A", "Cesky jazyk", "Anglicky jazyk", "Dejepis", "Nemecky jazyk");
+
+        Main Student3 = new Main("Jan", "Maly", "24.3.2000",
+                "4.A", "Cesky jazyk", "Anglicky jazyk", "Matematika", "Nemecky jazyk");
+
+        Main Student4 = new Main("Emil", "Tvrdy", "28.5.2000",
+                "4.A", "Cesky jazyk", "Anglicky jazyk", "Dejepis", "Chemie");
+
+        Main Student5 = new Main("David", "Koutny", "25.8.2000",
+                "4.A", "Cesky jazyk", "Anglicky jazyk", "Dejepis", "Nemecky jazyk");
+
+
+        System.out.println(" ");
+
+//Vypis vysledku studentu:
+
+        System.out.println("Studenti: ");
+        System.out.println(Student1.info());
+        System.out.println(Student2.info());
+        System.out.println(Student3.info());
+        System.out.println(Student4.info());
+
+        System.out.println(" ");
+//Vypis vysledku studentu:
+
+        System.out.println("Vysledky studentu u maturitnich zkousek: ");
+        System.out.println(Student1.znamky());
+        System.out.println(Student2.znamky());
+        System.out.println(Student3.znamky());
+        System.out.println(Student4.znamky());
+
+
+        
+}
+}
